@@ -7,15 +7,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  articulos: any;
+  paises: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get("https://scratchya.com.ar/vue/datos.php")
+    this.http.get("https://api.covid19api.com/summary")
       .subscribe(
         resultado => {
-          this.articulos = resultado;
+          this.paises = resultado;
+          
         }
       );
   }

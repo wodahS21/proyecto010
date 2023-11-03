@@ -6,18 +6,18 @@
   <title>proyecto010</title>
 </head>
 <body>
-  <div *ngIf="articulos!=null; else espera">
+  <div *ngIf="paises!=null; else espera">
     <table border="1">
       <tr>
-        <td>Codigo</td><td>Descripcion</td><td>Precio</td>
+        <td>Pais</td><td>Total de casos</td><td>Total de muertos</td>
       </tr>
-      <tr *ngFor="let art of articulos">
-        <td>{{art.codigo}}</td>
-        <td>{{art.descripcion}}</td>
-        <td>{{art.precio}}</td>
+      <tr *ngFor="let pais of paises.Countries">
+        <td>{{pais.Country}}</td>
+        <td>{{pais.TotalConfirmed}}</td>
+        <td>{{pais.TotalDeaths}}</td>
       </tr>
     </table>
   </div>
   <ng-template #espera>Esperando datos...</ng-template>
 </body>
-</html>l
+</html>
